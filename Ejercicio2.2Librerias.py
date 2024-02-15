@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler, Imputer
+from sklearn.preprocessing import StandardScaler, SimpleImputer
 from sklearn.decomposition import PCA
 from sklearn.mixture import GaussianMixture
 import matplotlib.pyplot as plt 
