@@ -25,20 +25,20 @@ data[['CustAccountBalance', 'TransactionAmount (INR)']] = imputer.fit_transform(
 
 #implementar k means
 
-# #elbow method
-# distances_df = []
-# for clusters in range(1,11):
-#     km = KMeans(n_clusters=clusters)
-#     km.fit(data)
-#     distances_df.append([clusters,km.inertia_])
-# distances_df = pd.DataFrame(distances_df,columns=["clusters","distance"])
+#elbow method
+distances_df = []
+for clusters in range(1,11):
+    km = KMeans(n_clusters=clusters)
+    km.fit(data)
+    distances_df.append([clusters,km.inertia_])
+distances_df = pd.DataFrame(distances_df,columns=["clusters","distance"])
 
-# #graficar
-# distances_df.set_index("clusters").plot()
-# plt.xlabel("cantidad de centroides")
-# plt.ylabel("distancia cuadrada entre centroides")
-# plt.title("Kmeans Elbow")
-# plt.show()
+#graficar
+distances_df.set_index("clusters").plot()
+plt.xlabel("cantidad de centroides")
+plt.ylabel("distancia cuadrada entre centroides")
+plt.title("Kmeans Elbow")
+plt.show()
 
 # se usa 3 después de revisar la gráfica del elbow
 km = KMeans(n_clusters=3)
